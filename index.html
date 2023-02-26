@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rest Country API</title>
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="bg-success">
+      <h1 class="text-center py-5 text-white">World Tour by Rest API</h1>
+    </header>
+    <main>
+      <section class="container">
+        <div class="row py-5">
+          <div class="col-12 col-md-8">
+            <h2 class="my-3">All Countries</h2>
+            <!-- all countries here -->
+            <div id="show-all-country" class="row row-cols-1 row-cols-md-3 g-4">
+              <!-- countries div here from js -->
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <h2 class="my-3">Filter your Destination</h2>
+            <!-- search -->
+            <div class="input-group mb-3 w-75">
+                <input id="input-field" type="text" class="form-control" placeholder="Search a country" aria-label="Username" aria-describedby="basic-addon1">
+                <button onclick="searchCountry()" class="btn btn-danger">Search</button>
+              </div>
+            <div class="dropdown">
+                <button onclick="filterCountry()" id="filterText" class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Filter by Region
+                </button>
+                <ul class="dropdown-menu" onclick="countryByRegion()">
+                  <li><button onclick="countryAfrica()" class="dropdown-item" type="button">Africa</button></li>
+                  <li><button onclick="countryAmerica()" class="dropdown-item" type="button">America</button></li>
+                  <li><button onclick="countryAsia()" class="dropdown-item" type="button">Asia</button></li>
+                  <li><button onclick="countryEurope()" class="dropdown-item" type="button">Europe</button></li>
+                  <li><button onclick="countryOceania()" class="dropdown-item" type="button">Oceania</button></li>
+                </ul>
+              </div>
+
+          </div>
+        </div>
+
+        <!-- don't touch -->
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="countryModal"
+          tabindex="-1"
+          aria-labelledby="countryModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="countryModalLabel">
+                  Modal title
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body" id="modal-content">...</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom js -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
